@@ -1,4 +1,4 @@
 /.bundle
-/log/*
+log/*
 !/log/.keep
-/tmp/*
+tmp/*
