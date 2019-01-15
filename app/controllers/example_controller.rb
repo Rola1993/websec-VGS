@@ -3,6 +3,8 @@ require 'net/http'
 require 'net/https'
 require 'json'
 
+HTTPS_PROXY_USERNAME="US9vdvFuXLsqb3NvCv7BDw1d"
+HTTPS_PROXY_PASSWORD="2f3a15f9-6caa-43f2-8b89-67ede8421759"
 
 class ExampleController < ActionController::Base
 
@@ -11,8 +13,8 @@ class ExampleController < ActionController::Base
   end
 
   def curl_send
-    proxy = URI("https://USr1imnGzpFKqhgRU839JCpa:76df229b-bd47-4b47-8a68-6edb9fcaf1e4@tnt5jvcsgxf.sandbox.verygoodproxy.com:8080")
-    uri = URI('https://echo.apps.verygood.systems/post')
+    proxy = URI.parse("https://#{HTTPS_PROXY_USERNAME}:#{HTTPS_PROXY_PASSWORD}@tnt5jvcsgxf.sandbox.verygoodproxy.com:8080")
+    uri = URI.parse('https://echo.apps.verygood.systems/post')
     http = Net::HTTP.new(uri.host, uri.port, proxy.host, proxy.port, proxy.user, proxy.password)
     http.use_ssl = true
     http.ca_file = './cert.pem'
