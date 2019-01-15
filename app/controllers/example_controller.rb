@@ -4,7 +4,7 @@ require 'net/http'
 class ExampleController < ActionController::Base
 
   def curl_data
-    render plain: "#{request.body.read}"
+    render plain: "payload: #{request.body.read}"
   end
 
   def curl_send
