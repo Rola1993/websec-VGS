@@ -20,7 +20,7 @@ class ExampleController < ActionController::Base
     http.verify_depth = 5
 
     new_request = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
-    new_request.body = "#{request.body}".to_json
+    new_request.body = "#{request.body.read}".to_json
     response = http.request(new_request)
     render plain: "Response #{response.code} #{response.message}: #{response.body}"
   end
