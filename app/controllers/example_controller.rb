@@ -17,7 +17,7 @@ class ExampleController < ActionController::Base
     uri = URI('https://echo.apps.verygood.systems/post')
     http = Net::HTTP.new(uri.host, uri.port, proxy.host, proxy.port, proxy.user, proxy.password)
     http.use_ssl = true
-    http.ca_file = '/cert.pem'
+    http.ca_file = './cert.pem'
     http.verify_mode = OpenSSL::SSL::VERIFY_PEER
     http.verify_depth = 5
 
