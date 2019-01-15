@@ -16,8 +16,7 @@ class ExampleController < ActionController::Base
     http = Net::HTTP.new(uri.host, uri.port, proxy.host, proxy.port, proxy.user, proxy.password)
     http.use_ssl = true
     http.ca_file = File.join(Rails.root, 'cert.pem')
-    OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
-    http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     http.verify_depth = 5
 
     new_request = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
