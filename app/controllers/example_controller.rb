@@ -3,6 +3,9 @@ require 'net/http'
 require 'net/https'
 require 'json'
 
+@username = ENV['FORWARD_HTTP_PROXY_USERNAME']
+@password = ENV['FORWARD_HTTP_PROXY_PASSWORD']
+
 class ExampleController < ActionController::Base
 
   def curl_data
@@ -10,7 +13,7 @@ class ExampleController < ActionController::Base
   end
 
   def curl_send
-    proxy = URI('https://<USERNAME>:<PASSWORD>@tnt5jvcsgxf.sandbox.verygoodproxy.com:8080')
+    proxy = URI('https://#{@username}:#{password}@tnt5jvcsgxf.sandbox.verygoodproxy.com:8080')
     uri = URI('https://echo.apps.verygood.systems/post')
     http = Net::HTTP.new(uri.host, uri.port, proxy.host, proxy.port, proxy.user, proxy.password)
     http.use_ssl = true
