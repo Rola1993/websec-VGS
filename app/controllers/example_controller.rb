@@ -14,13 +14,13 @@ class ExampleController < ActionController::Base
   uri = URI.parse('https://echo.apps.verygood.systems/post')
   http = Net::HTTP.new(uri.host, uri.port, proxy.host, proxy.port, proxy.user, proxy.password)
   http.use_ssl = true
-  http.ca_file = '../../cert.pem'
+  http.ca_file = '/cert.pem'
   http.verify_mode = OpenSSL::SSL::VERIFY_PEER
   http.verify_depth = 5
 
-  request = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
-  request.body = {secret: 'ALIAS'}.to_json
-  response = http.request(request)
+  new_request = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
+  new_request.body = "#{request.body.read}".to_json
+  response = http.request(new_equest)
   render plain: "Response #{response.code} #{response.message}: #{response.body}"
   end
 end
