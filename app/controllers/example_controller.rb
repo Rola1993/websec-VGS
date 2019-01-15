@@ -21,7 +21,7 @@ class ExampleController < ActionController::Base
 
     new_request = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
     val = params["secret"]
-    new_request.body = "secret: '#{val}'".to_json
+    new_request.body = {'secret': "#{val}"}.to_json
     response = http.request(new_request)
     render plain: "Response #{response.code} #{response.message}: #{response.body}"
   end

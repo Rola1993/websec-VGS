@@ -800,3 +800,43 @@ Processing by ExampleController#curl_send as */*
 Completed 200 OK in 386ms (Views: 0.4ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/send" for 127.0.0.1 at 2019-01-15 10:07:55 -0800
+Processing by ExampleController#curl_send as */*
+  Parameters: {"secret"=>"tok_sandbox_9eCN6HNEPfhs9GtMsTmz5P", "example"=>{"secret"=>"tok_sandbox_9eCN6HNEPfhs9GtMsTmz5P"}}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 5120ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/send" for 127.0.0.1 at 2019-01-15 10:08:43 -0800
+Processing by ExampleController#curl_send as */*
+  Parameters: {"secret"=>"tok_sandbox_9eCN6HNEPfhs9GtMsTmz5P", "example"=>{"secret"=>"tok_sandbox_9eCN6HNEPfhs9GtMsTmz5P"}}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 5592ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/send" for 127.0.0.1 at 2019-01-15 10:10:09 -0800
+Processing by ExampleController#curl_send as */*
+  Parameters: {"secret"=>"tok_sandbox_9eCN6HNEPfhs9GtMsTmz5P", "example"=>{"secret"=>"tok_sandbox_9eCN6HNEPfhs9GtMsTmz5P"}}
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 4772ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/send" for 127.0.0.1 at 2019-01-15 10:10:28 -0800
+Processing by ExampleController#curl_send as */*
+  Parameters: {"secret"=>"tok_sandbox_9eCN6HNEPfhs9GtMsTmz5P", "example"=>{"secret"=>"tok_sandbox_9eCN6HNEPfhs9GtMsTmz5P"}}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 5233ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/send" for 127.0.0.1 at 2019-01-15 10:12:55 -0800
+Processing by ExampleController#curl_send as */*
+  Parameters: {"secret"=>"tok_sandbox_9eCN6HNEPfhs9GtMsTmz5P", "example"=>{"secret"=>"tok_sandbox_9eCN6HNEPfhs9GtMsTmz5P"}}
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 1176ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
