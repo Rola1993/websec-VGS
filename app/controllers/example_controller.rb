@@ -20,7 +20,7 @@ class ExampleController < ActionController::Base
     http.verify_depth = 5
 
     new_request = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
-    val = JSON.parse(response.body)["secret"]
+    val = params["secret"]
     new_request.body = "secret: '#{val}'".to_json
     response = http.request(new_request)
     render plain: "Response #{response.code} #{response.message}: #{response.body}"
